@@ -38,6 +38,11 @@ export class StoreComponent {
         this.changePage(1);
     }
 
+    get pageCount(): number {
+        return Math.ceil(this.repository
+            .getProducts(this.selectedCategory).length / this.productsPerPage);
+    }
+
     get pageNumbers(): number[] {
         return Array(Math.ceil(this.repository
             .getProducts(this.selectedCategory).length / this.productsPerPage))
