@@ -27,6 +27,7 @@ export class StoreComponent {
     
     changeCategory(newCategory?: string) {
         this.selectedCategory = newCategory;
+        this.changePage(1);
     }
 
     changePage(newPage: number) {
@@ -43,11 +44,11 @@ export class StoreComponent {
             .getProducts(this.selectedCategory).length / this.productsPerPage);
     }
 
-    get pageNumbers(): number[] {
+    /* get pageNumbers(): number[] {
         return Array(Math.ceil(this.repository
             .getProducts(this.selectedCategory).length / this.productsPerPage))
             .fill(0)
-            .map((x, i ) => i + 1);
-    }
+            .map((i) => i + 1);
+    } */
 
 }
