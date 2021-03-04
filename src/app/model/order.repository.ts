@@ -13,7 +13,7 @@ export class OrderRepository {
         return this.orders;
     }
 
-    saveOrder(order: Order) {
-        this.dataSource.saveOrder(order);
+    saveOrder(order: Order): Observable<Order> {
+        return this.dataSource.saveOrder(order);
     }
 }
