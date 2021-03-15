@@ -15,7 +15,7 @@ module.exports = function (req, res, next) {
 
             res.json({ success:true, token: token });
         } else {
-            res.json({ success: flase });
+            res.json({ success: false });
         }
 
         res.end();
