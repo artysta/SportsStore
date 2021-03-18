@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
         res.end();
         return;
     } else if ((req.url.startsWith("/products") && req.method != "GET") || (req.url.startsWith("/orders") && req.method != "POST")) {
-        let.token = req.headers["authorization"];
+        let token = req.headers["authorization"];
 
         if (token != null && token.startsWith("Bearer<")) {
             token = token.substring(7, token.length - 1);

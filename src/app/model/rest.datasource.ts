@@ -51,7 +51,7 @@ export class RestDataSource {
     // Order.
 
     getOrders(): Observable<Order[]> {
-        return this.sendRequest(RequestMethod.Get, "orders") as Observable<Order[]>;
+        return this.sendRequest(RequestMethod.Get, "orders", null, true) as Observable<Order[]>;
     }
 
     saveOrder(order: Order): Observable<Order> {
